@@ -196,8 +196,8 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     MaterialShowcase *materialShowcase = [[MaterialShowcase alloc] init];
     UIView *target = [self.bridge.uiManager viewForReactTag: view];
     
-    NSString *primaryText = [props objectForKey: @"primaryText"];
-    NSString *secondaryText = [props objectForKey: @"secondaryText"];
+    NSString *primaryText = [props objectForKey: @"title"];
+    NSString *secondaryText = [props objectForKey: @"description"];
     
     // Background
     UIColor *backgroundPromptColor;
@@ -209,8 +209,8 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
         [materialShowcase setBackgroundColor: backgroundPromptColor];
     }
     
-    if ([props objectForKey:@"backgroundPrompAlpha"] != nil) {
-        float backgroundPrompAlphaValue = [[props objectForKey:@"backgroundPrompAlpha"] floatValue];
+    if ([props objectForKey:@"outerCircleAlpha"] != nil) {
+        float backgroundPrompAlphaValue = [[props objectForKey:@"outerCircleAlpha"] floatValue];
         if (backgroundPrompAlphaValue >= 0.0 && backgroundPrompAlphaValue <= 1.0) {
             [materialShowcase setBackgroundPromptColorAlpha:backgroundPrompAlphaValue];
         }
@@ -219,7 +219,7 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     // Target
     UIColor *targetTintColor;
     UIColor *targetHolderColor;
-    NSString *targetTintColorValue = [props objectForKey:@"targetTintColor"];
+    NSString *targetTintColorValue = [props objectForKey:@"outerCircleColor"];
     if (targetTintColorValue != nil) {
         targetTintColor = [self colorWithHexString: targetTintColorValue];
     }
@@ -236,8 +236,8 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
         [materialShowcase setTargetHolderColor: targetHolderColor];
     }
     
-    if ([props objectForKey:@"targetHolderRadius"] != nil) {
-        float targetHolderRadiusValue = [[props objectForKey:@"targetHolderRadius"] floatValue];
+    if ([props objectForKey:@"targetRadius"] != nil) {
+        float targetHolderRadiusValue = [[props objectForKey:@"targetRadius"] floatValue];
         if (targetHolderRadiusValue >= 0) {
             [materialShowcase setTargetHolderRadius: targetHolderRadiusValue];
         }
@@ -254,12 +254,12 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     //    showcase.primaryTextFont = UIFont.boldSystemFont(ofSize: primaryTextSize)
     //    showcase.secondaryTextFont = UIFont.systemFont(ofSize: secondaryTextSize)
     
-    NSString *primaryTextColorValue = [props objectForKey:@"primaryTextColor"];
+    NSString *primaryTextColorValue = [props objectForKey:@"titleTextColor"];
     if (primaryTextColorValue != nil) {
         primaryTextColor = [self colorWithHexString:primaryTextColorValue];
     }
     
-    NSString *secondaryTextColorValue = [props objectForKey:@"secondaryTextColor"];
+    NSString *secondaryTextColorValue = [props objectForKey:@"descriptionTextColor"];
     if (secondaryTextColorValue != nil) {
         secondaryTextColor = [self colorWithHexString:secondaryTextColorValue];
     }
@@ -273,16 +273,16 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
         [materialShowcase setSecondaryTextColor: secondaryTextColor];
     }
     
-    float primaryTextSizeValue = [[props objectForKey:@"primaryTextSize"] floatValue];
-    float secondaryTextSizeValue = [[props objectForKey:@"secondaryTextSize"] floatValue];
+    float primaryTextSizeValue = [[props objectForKey:@"titleTextSize"] floatValue];
+    float secondaryTextSizeValue = [[props objectForKey:@"descriptionTextSize"] floatValue];
     if (primaryTextSizeValue > 0) {
         [materialShowcase setPrimaryTextSize: primaryTextSizeValue];
     } if (secondaryTextSizeValue > 0) {
         [materialShowcase setSecondaryTextSize: secondaryTextSizeValue];
     }
     
-    NSString *primaryTextAlignmentValue = [props objectForKey:@"primaryTextAlignment"];
-    NSString *secondaryTextAlignmentValue = [props objectForKey:@"secondaryTextAlignment"];
+    NSString *primaryTextAlignmentValue = [props objectForKey:@"titleTextAlignment"];
+    NSString *secondaryTextAlignmentValue = [props objectForKey:@"descriptionTextAlignment"];
     if (primaryTextAlignmentValue != nil) {
         NSTextAlignment* primaryTextAlign = [self getTextAlignmentByString:primaryTextAlignmentValue];
         [materialShowcase setSecondaryTextAlignment: primaryTextAlign];

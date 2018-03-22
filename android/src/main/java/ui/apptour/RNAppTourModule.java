@@ -110,90 +110,87 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
   }
 
   private TapTarget generateTapTarget(final int view, final ReadableMap props) {
-      final Activity activity = this.getCurrentActivity();
+    final Activity activity = this.getCurrentActivity();
 
-      final String title = props.getString("title");
-      
-      String description = null;
-      String outerCircleColor = null;
-      String targetCircleColor = null;
-      String titleTextColor = null;
-      String descriptionTextColor = null;
-      String textColor = null;
-      String dimColor = null;
-      
-      if (props.hasKey("description") && !props.isNull("description")) {
-          description = props.getString("description");
-      }
-      if (props.hasKey("outerCircleColor") && !props.isNull("outerCircleColor")) {
-          outerCircleColor = props.getString("outerCircleColor");
-      }
-      if (props.hasKey("targetCircleColor") && !props.isNull("targetCircleColor")) {
-          targetCircleColor = props.getString("targetCircleColor");
-      }
-      if (props.hasKey("titleTextColor") && !props.isNull("titleTextColor")) {
-          titleTextColor = props.getString("titleTextColor");
-      }
-      if (props.hasKey("descriptionTextColor") && !props.isNull("descriptionTextColor")) {
-          descriptionTextColor = props.getString("descriptionTextColor");
-      }
-      if (props.hasKey("textColor") && !props.isNull("textColor")) {
-          textColor = props.getString("textColor");
-      }
-      if (props.hasKey("dimColor") && !props.isNull("dimColor")) {
-          dimColor = props.getString("dimColor");
-      }
+    final String title = props.getString("title");
+    final String description = props.getString("description");
+
+    String outerCircleColor = null;
+    String targetCircleColor = null;
+    String titleTextColor = null;
+    String descriptionTextColor = null;
+    String textColor = null;
+    String dimColor = null;
+
+    if (props.hasKey("outerCircleColor") && !props.isNull("outerCircleColor")) {
+        outerCircleColor = props.getString("outerCircleColor");
+    }
+    if (props.hasKey("targetCircleColor") && !props.isNull("targetCircleColor")) {
+        targetCircleColor = props.getString("targetCircleColor");
+    }
+    if (props.hasKey("titleTextColor") && !props.isNull("titleTextColor")) {
+        titleTextColor = props.getString("titleTextColor");
+    }
+    if (props.hasKey("descriptionTextColor") && !props.isNull("descriptionTextColor")) {
+        descriptionTextColor = props.getString("descriptionTextColor");
+    }
+    if (props.hasKey("textColor") && !props.isNull("textColor")) {
+        textColor = props.getString("textColor");
+    }
+    if (props.hasKey("dimColor") && !props.isNull("dimColor")) {
+        dimColor = props.getString("dimColor");
+    }
 
 
-      //Other Props
-      float outerCircleAlpha = 0.96f;
-      int titleTextSize = 20;
-      int descriptionTextSize = 10;
-      boolean drawShadow = true;
-      boolean cancelable = true;
-      boolean tintTarget = true;
-      boolean transparentTarget = true;
-      int targetRadius = 60;
+    //Other Props
+    float outerCircleAlpha = 0.96f;
+    int titleTextSize = 20;
+    int descriptionTextSize = 10;
+    boolean drawShadow = true;
+    boolean cancelable = true;
+    boolean tintTarget = true;
+    boolean transparentTarget = true;
+    int targetRadius = 60;
 
-      try { outerCircleAlpha = Float.valueOf(props.getString("outerCircleAlpha")); } catch (Exception e) {}
-      try { titleTextSize = Integer.valueOf(props.getString("titleTextSize")); } catch (Exception e) {}
-      try { descriptionTextSize = Integer.valueOf(props.getString("descriptionTextSize")); } catch (Exception e) {}
-      try { drawShadow = Boolean.valueOf(props.getString("drawShadow")); } catch (Exception e) {}
-      try { cancelable = Boolean.valueOf(props.getString("cancelable")); } catch (Exception e) {}
-      try { tintTarget = Boolean.valueOf(props.getString("tintTarget")); } catch (Exception e) {}
-      try { transparentTarget = Boolean.valueOf(props.getString("transparentTarget")); } catch (Exception e) {}
-      try { targetRadius = Integer.valueOf(props.getString("targetRadius")); } catch (Exception e) {}
+    try { outerCircleAlpha = Float.valueOf(props.getString("outerCircleAlpha")); } catch (Exception e) {}
+    try { titleTextSize = Integer.valueOf(props.getString("titleTextSize")); } catch (Exception e) {}
+    try { descriptionTextSize = Integer.valueOf(props.getString("descriptionTextSize")); } catch (Exception e) {}
+    try { drawShadow = Boolean.valueOf(props.getString("drawShadow")); } catch (Exception e) {}
+    try { cancelable = Boolean.valueOf(props.getString("cancelable")); } catch (Exception e) {}
+    try { tintTarget = Boolean.valueOf(props.getString("tintTarget")); } catch (Exception e) {}
+    try { transparentTarget = Boolean.valueOf(props.getString("transparentTarget")); } catch (Exception e) {}
+    try { targetRadius = Integer.valueOf(props.getString("targetRadius")); } catch (Exception e) {}
 
-      float finalOuterCircleAlpha = outerCircleAlpha;
-      int finalTitleTextSize = titleTextSize;
-      int finalDescriptionTextSize = descriptionTextSize;
-      boolean finalDrawShadow = drawShadow;
-      boolean finalCancelable = cancelable;
-      boolean finalTintTarget = tintTarget;
-      boolean finalTransparentTarget = transparentTarget;
-      int finalTargetRadius = targetRadius;
-
-
-      //Populate Props
-      TapTarget targetView = TapTarget.forView(activity.findViewById(view), title, description);
-
-      if (outerCircleColor != null && outerCircleColor.length() > 0) targetView.outerCircleColorInt(Color.parseColor(outerCircleColor));
-      if (targetCircleColor != null && targetCircleColor.length() > 0) targetView.targetCircleColorInt(Color.parseColor(targetCircleColor));
-      if (titleTextColor != null && titleTextColor.length() > 0) targetView.titleTextColorInt(Color.parseColor(titleTextColor));
-      if (descriptionTextColor != null && descriptionTextColor.length() > 0) targetView.descriptionTextColorInt(Color.parseColor(descriptionTextColor));
-      if (textColor != null && textColor.length() > 0) targetView.textColorInt(Color.parseColor(textColor));
-      if (dimColor != null && dimColor.length() > 0) targetView.dimColorInt(Color.parseColor(dimColor));
+    float finalOuterCircleAlpha = outerCircleAlpha;
+    int finalTitleTextSize = titleTextSize;
+    int finalDescriptionTextSize = descriptionTextSize;
+    boolean finalDrawShadow = drawShadow;
+    boolean finalCancelable = cancelable;
+    boolean finalTintTarget = tintTarget;
+    boolean finalTransparentTarget = transparentTarget;
+    int finalTargetRadius = targetRadius;
 
 
-      targetView.outerCircleAlpha(finalOuterCircleAlpha);
-      targetView.titleTextSize(finalTitleTextSize);
-      targetView.descriptionTextSize(finalDescriptionTextSize);
-      targetView.drawShadow(finalDrawShadow);
-      targetView.cancelable(finalCancelable);
-      targetView.tintTarget(finalTintTarget);
-      targetView.transparentTarget(finalTransparentTarget);
-      targetView.targetRadius(finalTargetRadius);
+    //Populate Props
+    TapTarget targetView = TapTarget.forView(activity.findViewById(view), title, description);
 
-      return targetView;
-  }
+    if (outerCircleColor != null && outerCircleColor.length() > 0) targetView.outerCircleColorInt(Color.parseColor(outerCircleColor));
+    if (targetCircleColor != null && targetCircleColor.length() > 0) targetView.targetCircleColorInt(Color.parseColor(targetCircleColor));
+    if (titleTextColor != null && titleTextColor.length() > 0) targetView.titleTextColorInt(Color.parseColor(titleTextColor));
+    if (descriptionTextColor != null && descriptionTextColor.length() > 0) targetView.descriptionTextColorInt(Color.parseColor(descriptionTextColor));
+    if (textColor != null && textColor.length() > 0) targetView.textColorInt(Color.parseColor(textColor));
+    if (dimColor != null && dimColor.length() > 0) targetView.dimColorInt(Color.parseColor(dimColor));
+
+
+    targetView.outerCircleAlpha(finalOuterCircleAlpha);
+    targetView.titleTextSize(finalTitleTextSize);
+    targetView.descriptionTextSize(finalDescriptionTextSize);
+    targetView.drawShadow(finalDrawShadow);
+    targetView.cancelable(finalCancelable);
+    targetView.tintTarget(finalTintTarget);
+    targetView.transparentTarget(finalTransparentTarget);
+    targetView.targetRadius(finalTargetRadius);
+
+    return targetView;
+ }
 }

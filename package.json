@@ -1,22 +1,19 @@
 {
-    "name": "react-native-app-tour",
-    "version": "0.0.2",
-    "description": "React Native: Native App Tour Library",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/prscX/react-native-app-tour.git"
-    },
-    "main": "RNAppTour.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "keywords": [
-        "react-native"
-    ],
-    "author": "Pranav Raj Singh Chauhan",
-    "license": "MIT",
-    "dependencies": {},
-    "devDependencies": {
-        "prettier-pack": "0.0.2"
-    }
+  "name": "wcchimiiz-show-case-v2",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WCChimiiz/react-native-WcShowCaseV2.git"
+  },
+  "author": "Wiwat Patanaprasitchai",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WCChimiiz/react-native-WcShowCaseV2/issues"
+  },
+  "homepage": "https://github.com/WCChimiiz/react-native-WcShowCaseV2#readme"
 }

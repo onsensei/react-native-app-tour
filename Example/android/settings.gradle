@@ -1,5 +1,5 @@
 rootProject.name = 'Example'
-include ':react-native-app-tour'
-project(':react-native-app-tour').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-app-tour/android')
+include ':wcchimiiz-show-case-v2'
+project(':wcchimiiz-show-case-v2').projectDir = new File(rootProject.projectDir, '../node_modules/wcchimiiz-show-case-v2/android')
 
 include ':app'
