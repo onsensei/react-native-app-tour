@@ -29,11 +29,15 @@ class AppTourSequence {
   }
 
   add(appTourTarget) {
-    this.appTourTargets.set(appTourTarget.view, appTourTarget);
+    if(appTourTarget.view !== null){
+      this.appTourTargets.set(appTourTarget.view, appTourTarget);
+    }
   }
 
   remove(appTourTarget) {
-    this.appTourTargets.delete(appTourTarget.view);
+    if(appTourTarget.view !== null){
+      this.appTourTargets.delete(appTourTarget.view);
+    }
   }
 
   removeAll() {

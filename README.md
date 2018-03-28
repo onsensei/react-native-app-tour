@@ -1,7 +1,7 @@
 <p align="center">
-  <a href="https://www.npmjs.com/package/wcchimiiz-show-case-v2"><img src="http://img.shields.io/npm/v/wcchimiiz-show-case-v2.svg?style=flat" /></a>
+  <a href="https://www.npmjs.com/package/wcchimiiz-show-case-v2"><img src="http://img.shields.io/npm/v/react-native-taptargetview.svg?style=flat" /></a>
   <a href="https://github.com/WCChimiiz/react-native-WcShowCaseV2/pulls"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" /></a>
-  <a href="https://github.com/WCChimiiz/react-native-WcShowCaseV2#License"><img src="https://img.shields.io/npm/l/wcchimiiz-show-case-v2.svg?style=flat" /></a>
+  <a href="https://github.com/WCChimiiz/react-native-WcShowCaseV2#License"><img src="https://img.shields.io/npm/l/react-native-taptargetview.svg?style=flat" /></a>
 </p>
 
 # wcchimiiz-show-case-v2
@@ -62,7 +62,6 @@ import {AppTour, AppTourSequence, AppTourView} from 'wcchimiiz-show-case-v2';
   - drawShadow #Boolean
   - cancelable #Boolean
   - tintTarget #Boolean
-  - transparentTarget Boolean
 
 
 ## Credits

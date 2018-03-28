@@ -22,43 +22,31 @@ class Main extends Component {
       <View style={styles.container}>
         <Text ref={ref => {
             this.text1 = ref;
-            let props;
-            props = {
-              title: "This is a target Text 1",
-              description: "We have the best targets, believe me",
-              outerCircleColor: "#3f52ae"
-            }
             this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
-                  { ...props }
+                  { title: "This is a target Text 1",
+                  description: "We have the best targets, believe me",
+                  outerCircleColor: "#3f52ae" }
             ));
           }} style={styles.welcome}>Welcome to React Native!</Text>
 
         <Text ref={ref => {
-            this.text2 = ref;
-            let props;
-            props = {
-              title: "This is a target Text 2",
-              description: "We have the best targets, believe me",
-              outerCircleColor: "#7051ae"
-            }
+            this.text2 = ref; 
             this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
-                  { ...props }
+                  { title: "This is a target Text 2",
+                  description: "We have the best targets, believe me",
+                  outerCircleColor: "#7051ae" }
             ));
           }} style={styles.instructions}>To get started, edit App.js</Text>
 
         <Text ref={ref => {
             this.text3 = ref;
-            let props;
-            props = {
-              title: "This is a target Text 4",
-              description: "We have the best targets, believe me",
-              outerCircleColor: "#1f599e"
-            }
             this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
-                  { ...props }
+                  { title: "This is a target Text 4",
+                  description: "We have the best targets, believe me",
+                  outerCircleColor: "#1f599e" }
             ));
           }} style={styles.instructions}>{instructions}</Text>
 
@@ -66,19 +54,15 @@ class Main extends Component {
           style={styles.button}
           ref={(ref) => {
             this.text4 = ref;
-            let props;
-            props = {
-              title: "This is a target Button 1",
-              description: "We have the best targets, believe me",
-              outerCircleColor: "#af5bae"
-            }
             this.props.addAppTourTarget && this.props.addAppTourTarget(AppTourView.for(
                   ref,
-                  { ...props }
+                  {title: "This is a target Button 1",
+                  description: "We have the best targets, believe me",
+                  outerCircleColor: "#af5bae"}
             ));
           }} onPress={() => {
             const targetView = AppTourView.for(this.text4, {
-              title: 'Button!',
+              title: 'Button!++++ๅ',
               description: 'Click Me !!!',
               outerCircleColor: '#123321',
               targetHolderColor: '#FFFFFF',
