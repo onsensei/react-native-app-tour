@@ -148,8 +148,8 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
     int descriptionTextSize = 10;
     boolean drawShadow = true;
     boolean cancelable = true;
-    boolean tintTarget = true;
-    boolean transparentTarget = true;
+    boolean tintTarget = false;
+    boolean transparentTarget = false;
     int targetRadius = 60;
 
     try { outerCircleAlpha = Float.valueOf(props.getString("outerCircleAlpha")); } catch (Exception e) {}

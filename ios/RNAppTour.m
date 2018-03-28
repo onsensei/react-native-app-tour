@@ -228,7 +228,6 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
         targetHolderColor = [self colorWithHexString: targetHolderColorValue];
     }
     
-    
     if (targetTintColor != nil) {
         target.tintColor = targetTintColor;
         [materialShowcase setTargetTintColor: targetTintColor];
@@ -237,10 +236,14 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     }
     
     if ([props objectForKey:@"targetRadius"] != nil) {
-        float targetHolderRadiusValue = [[props objectForKey:@"targetRadius"] floatValue];
+        targetHolderRadiusValue = [[props objectForKey:@"targetRadius"] floatValue];
         if (targetHolderRadiusValue >= 0) {
             [materialShowcase setTargetHolderRadius: targetHolderRadiusValue];
+        } else {
+          [materialShowcase setTargetHolderRadius: 60];
         }
+    } else {
+      [materialShowcase setTargetHolderRadius: 60];
     }
     
     BOOL *isTapRecognizerForTagretViewValue = [[props objectForKey:@"isTapRecognizerForTagretView"] boolValue];
@@ -272,13 +275,19 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     } if (secondaryTextColor != nil) {
         [materialShowcase setSecondaryTextColor: secondaryTextColor];
     }
-    
-    float primaryTextSizeValue = [[props objectForKey:@"titleTextSize"] floatValue];
-    float secondaryTextSizeValue = [[props objectForKey:@"descriptionTextSize"] floatValue];
-    if (primaryTextSizeValue > 0) {
-        [materialShowcase setPrimaryTextSize: primaryTextSizeValue];
-    } if (secondaryTextSizeValue > 0) {
-        [materialShowcase setSecondaryTextSize: secondaryTextSizeValue];
+
+    if ([props objectForKey:@"titleTextSize"] != nil) {
+      primaryTextSizeValue = [[props objectForKey:@"titleTextSize"] floatValue];
+      [materialShowcase setPrimaryTextSize: primaryTextSizeValue];
+    } else {
+      [materialShowcase setPrimaryTextSize: 20];
+    }
+
+    if ([props objectForKey:@"descriptionTextSize"] != nil) {
+      secondaryTextSizeValue = [[props objectForKey:@"descriptionTextSize"] floatValue];
+      [materialShowcase setSecondaryTextSize: secondaryTextSizeValue];
+    } else {
+      [materialShowcase setPrimaryTextSize: 10]; 
     }
     
     NSString *primaryTextAlignmentValue = [props objectForKey:@"titleTextAlignment"];
