@@ -287,7 +287,7 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
       float secondaryTextSizeValue = [[props objectForKey:@"descriptionTextSize"] floatValue];
       [materialShowcase setSecondaryTextSize: secondaryTextSizeValue];
     } else {
-      [materialShowcase setPrimaryTextSize: 10]; 
+      [materialShowcase setSecondaryTextSize: 10]; 
     }
     
     NSString *primaryTextAlignmentValue = [props objectForKey:@"titleTextAlignment"];
