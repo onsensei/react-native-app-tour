@@ -236,7 +236,7 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     }
     
     if ([props objectForKey:@"targetRadius"] != nil) {
-        targetHolderRadiusValue = [[props objectForKey:@"targetRadius"] floatValue];
+        float targetHolderRadiusValue = [[props objectForKey:@"targetRadius"] floatValue];
         if (targetHolderRadiusValue >= 0) {
             [materialShowcase setTargetHolderRadius: targetHolderRadiusValue];
         } else {
@@ -277,14 +277,14 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     }
 
     if ([props objectForKey:@"titleTextSize"] != nil) {
-      primaryTextSizeValue = [[props objectForKey:@"titleTextSize"] floatValue];
+      float primaryTextSizeValue = [[props objectForKey:@"titleTextSize"] floatValue];
       [materialShowcase setPrimaryTextSize: primaryTextSizeValue];
     } else {
       [materialShowcase setPrimaryTextSize: 20];
     }
 
     if ([props objectForKey:@"descriptionTextSize"] != nil) {
-      secondaryTextSizeValue = [[props objectForKey:@"descriptionTextSize"] floatValue];
+      float secondaryTextSizeValue = [[props objectForKey:@"descriptionTextSize"] floatValue];
       [materialShowcase setSecondaryTextSize: secondaryTextSizeValue];
     } else {
       [materialShowcase setPrimaryTextSize: 10]; 
