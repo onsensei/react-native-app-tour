@@ -125,9 +125,6 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
     if (props.hasKey("outerCircleColor") && !props.isNull("outerCircleColor")) {
         outerCircleColor = props.getString("outerCircleColor");
     }
-    if (props.hasKey("targetCircleColor") && !props.isNull("targetCircleColor")) {
-        targetCircleColor = props.getString("targetCircleColor");
-    }
     if (props.hasKey("titleTextColor") && !props.isNull("titleTextColor")) {
         titleTextColor = props.getString("titleTextColor");
     }
@@ -137,11 +134,7 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
     if (props.hasKey("textColor") && !props.isNull("textColor")) {
         textColor = props.getString("textColor");
     }
-    if (props.hasKey("dimColor") && !props.isNull("dimColor")) {
-        dimColor = props.getString("dimColor");
-    }
-
-
+    
     //Other Props
     float outerCircleAlpha = 0.96f;
     int titleTextSize = 20;
@@ -155,11 +148,20 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
     try { outerCircleAlpha = Float.valueOf(props.getString("outerCircleAlpha")); } catch (Exception e) {}
     try { titleTextSize = Integer.valueOf(props.getString("titleTextSize")); } catch (Exception e) {}
     try { descriptionTextSize = Integer.valueOf(props.getString("descriptionTextSize")); } catch (Exception e) {}
-    try { drawShadow = Boolean.valueOf(props.getString("drawShadow")); } catch (Exception e) {}
-    try { cancelable = Boolean.valueOf(props.getString("cancelable")); } catch (Exception e) {}
-    try { tintTarget = Boolean.valueOf(props.getString("tintTarget")); } catch (Exception e) {}
-    try { transparentTarget = Boolean.valueOf(props.getString("transparentTarget")); } catch (Exception e) {}
     try { targetRadius = Integer.valueOf(props.getString("targetRadius")); } catch (Exception e) {}
+
+    // // code in fu ture //
+    // if (props.hasKey("dimColor") && !props.isNull("dimColor")) {
+    //   dimColor = props.getString("dimColor");
+    // }
+    // if (props.hasKey("targetCircleColor") && !props.isNull("targetCircleColor")) {
+    //   targetCircleColor = props.getString("targetCircleColor");
+    // }
+    // try { drawShadow = Boolean.valueOf(props.getString("drawShadow")); } catch (Exception e) {}
+    // try { cancelable = Boolean.valueOf(props.getString("cancelable")); } catch (Exception e) {}
+    // try { tintTarget = Boolean.valueOf(props.getString("tintTarget")); } catch (Exception e) {}
+    // try { transparentTarget = Boolean.valueOf(props.getString("transparentTarget")); } catch (Exception e) {}
+    // ////////////////////
 
     float finalOuterCircleAlpha = outerCircleAlpha;
     int finalTitleTextSize = titleTextSize;

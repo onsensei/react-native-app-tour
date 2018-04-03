@@ -49,20 +49,13 @@ import {AppTour, AppTourSequence, AppTourView} from 'wcchimiiz-show-case-v2';
 **Props**
   - title #String
   - description #String
-  - outerCircleColor #hexCodeRGB
-  - targetHolderColor #hexCodeRGB
-  - outerCircleAlpha #String(0.00 - 1.00)
-  - targetRadius #String(0 - 100)
   - titleTextSize #String(0 - 100)
   - descriptionTextSize #String(0 - 100)
-- Only iOS
-  - backgroundColor #hexCodeRGB
-- Only Android
-  - dimColor #hexCode
-  - drawShadow #Boolean
-  - cancelable #Boolean
-  - tintTarget #Boolean
-
+  - titleTextColor #hexCodeRGB
+  - descriptionTextColor #hexCodeRGB
+  - outerCircleColor #hexCodeRGB
+  - outerCircleAlpha #String(0.00 - 1.00)
+  - targetRadius #String(0 - 100)
 
 ## Credits
 - Android: [KeepSafe/TapTargetView](https://github.com/KeepSafe/TapTargetView)
