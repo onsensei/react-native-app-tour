@@ -30,6 +30,7 @@ export default class App extends Component {
       this.appTourTargets.forEach(appTourTarget => {
         appTourSequence.add(appTourTarget);
       });
+      console.log(this.appTourTargets)
       AppTour.ShowSequence(appTourSequence);
     }, 1000);
   }
