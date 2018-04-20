@@ -306,7 +306,7 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
         if (isButtonVisable) {
             if ([props objectForKey:@"buttonText"] != nil){
                 NSString *buttonText = [props objectForKey: @"buttonText"];
-                [materialShowcase setButtonVisable: buttonText];
+                [materialShowcase setButtonText: buttonText];
             }
             if ([props objectForKey:@"buttonTextColor"] != nil){
                 NSString *buttonTextColor = [props objectForKey: @"buttonTextColor"];
@@ -326,7 +326,7 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     } else {
         if ([props objectForKey:@"buttonText"] != nil){
             NSString *buttonText = [props objectForKey: @"buttonText"];
-            [materialShowcase setButtonVisable: buttonText];
+            [materialShowcase setButtonText: buttonText];
         }
         if ([props objectForKey:@"buttonTextColor"] != nil){
             NSString *buttonTextColor = [props objectForKey: @"buttonTextColor"];
