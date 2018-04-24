@@ -13,6 +13,7 @@ public class MaterialShowcaseInstructionView: UIView {
     
     internal static let PRIMARY_TEXT_SIZE: CGFloat = 20
     internal static let SECONDARY_TEXT_SIZE: CGFloat = 15
+    internal static let BUTTON_TEXT_SIZE: CGFloat = 0.8*SECONDARY_TEXT_SIZE
     internal static let PRIMARY_TEXT_COLOR = UIColor.white
     internal static let SECONDARY_TEXT_COLOR = UIColor.white.withAlphaComponent(0.87)
     internal static let PRIMARY_DEFAULT_TEXT = "Awesome action"
@@ -34,6 +35,7 @@ public class MaterialShowcaseInstructionView: UIView {
     public var secondaryTextColor: UIColor!
     public var primaryTextSize: CGFloat!
     public var secondaryTextSize: CGFloat!
+    public var buttonTextSize: CGFloat!
     public var primaryTextFont: UIFont?
     public var secondaryTextFont: UIFont?
     public var primaryTextAlignment: NSTextAlignment!
@@ -75,6 +77,7 @@ public class MaterialShowcaseInstructionView: UIView {
         secondaryTextColor = MaterialShowcaseInstructionView.SECONDARY_TEXT_COLOR
         primaryTextSize = MaterialShowcaseInstructionView.PRIMARY_TEXT_SIZE
         secondaryTextSize = MaterialShowcaseInstructionView.SECONDARY_TEXT_SIZE
+        buttonTextSize = MaterialShowcaseInstructionView.BUTTON_TEXT_SIZE
         
         // Button
         buttonVisable = MaterialShowcaseInstructionView.BUTTON_DEFAULT_VISABLE
@@ -154,7 +157,7 @@ public class MaterialShowcaseInstructionView: UIView {
         buttonLabel.setTitle(buttonText, for: .normal)
         buttonLabel.sizeToFit()
         buttonLabel.setTitleColor(buttonTextColor, for: .normal)
-        buttonLabel.titleLabel?.font = UIFont.boldSystemFont(ofSize: secondaryTextSize*0.8)
+        buttonLabel.titleLabel?.font = UIFont.boldSystemFont(ofSize: buttonTextSize)
         buttonLabel.backgroundColor = buttonBGColor
         buttonLabel.titleLabel?.textAlignment = .left
         buttonLabel.layer.cornerRadius = buttomRadius

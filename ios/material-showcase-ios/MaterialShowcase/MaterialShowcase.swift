@@ -74,6 +74,7 @@ public class MaterialShowcase: UIView {
     @objc public var buttonBGColor: UIColor!
     @objc public var buttonText: String!
     @objc public var buttonRadius: CGFloat = 0.0
+    @objc public var buttonTextSize: CGFloat = 0.0
     // Text
     @objc public var primaryText: String!
     @objc public var secondaryText: String!
@@ -241,6 +242,7 @@ extension MaterialShowcase {
         buttonBGColor = MaterialShowcaseInstructionView.BUTTON_DEFAULT_BG_COLOR
         buttonTextColor = MaterialShowcaseInstructionView.BUTTON_DEFAULT_TEXT_COLOR
         buttonRadius = MaterialShowcaseInstructionView.BUTTON_DEFAULT_RADIUS
+        buttonTextSize = MaterialShowcaseInstructionView.BUTTON_TEXT_SIZE
     }
     
     func startAnimations() {
@@ -408,6 +410,7 @@ extension MaterialShowcase {
         instructionView.buttonTextColor = buttonTextColor
         instructionView.buttonBGColor = buttonBGColor
         instructionView.buttomRadius = buttonRadius
+        instructionView.buttonTextSize = buttonTextSize
         
         // Calculate x position
         var xPosition = LABEL_MARGIN

@@ -308,6 +308,10 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
                 NSString *buttonText = [props objectForKey: @"buttonText"];
                 [materialShowcase setButtonText: buttonText];
             }
+            if ([props objectForKey:@"buttonTextSize"] != nil){
+                NSString *buttonTextSize = [props objectForKey: @"buttonTextSize"];
+                [materialShowcase setButtonTextSize: buttobuttonTextSizenText];
+            }
             if ([props objectForKey:@"buttonTextColor"] != nil){
                 NSString *buttonTextColor = [props objectForKey: @"buttonTextColor"];
                 [materialShowcase setButtonTextColor: [self colorWithHexString:buttonTextColor]];
@@ -327,6 +331,10 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
         if ([props objectForKey:@"buttonText"] != nil){
             NSString *buttonText = [props objectForKey: @"buttonText"];
             [materialShowcase setButtonText: buttonText];
+        }
+        if ([props objectForKey:@"buttonTextSize"] != nil){
+            NSString *buttonTextSize = [props objectForKey: @"buttonTextSize"];
+            [materialShowcase setButtonTextSize: buttobuttonTextSizenText];
         }
         if ([props objectForKey:@"buttonTextColor"] != nil){
             NSString *buttonTextColor = [props objectForKey: @"buttonTextColor"];

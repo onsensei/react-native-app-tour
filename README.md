@@ -61,6 +61,7 @@ import {AppTour, AppTourSequence, AppTourView} from 'wcchimiiz-show-case-v2';
   - buttonBGColor #hexCodeRGB
   - buttonRadius #String(0 - 100)
   - buttonVisable #Bool
+  - buttonTextSize #String(0 - 100)
 
 ## Credits
 - Android: [KeepSafe/TapTargetView](https://github.com/KeepSafe/TapTargetView)
