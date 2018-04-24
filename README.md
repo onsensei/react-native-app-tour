@@ -56,6 +56,11 @@ import {AppTour, AppTourSequence, AppTourView} from 'wcchimiiz-show-case-v2';
   - outerCircleColor #hexCodeRGB
   - outerCircleAlpha #String(0.00 - 1.00)
   - targetRadius #String(0 - 100)
+  - buttonText #String
+  - buttonTextColor #hexCodeRGB
+  - buttonBGColor #hexCodeRGB
+  - buttonRadius #String(0 - 100)
+  - buttonVisable #Bool
 
 ## Credits
 - Android: [KeepSafe/TapTargetView](https://github.com/KeepSafe/TapTargetView)
