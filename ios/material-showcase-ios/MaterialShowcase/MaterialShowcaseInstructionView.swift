@@ -138,7 +138,7 @@ public class MaterialShowcaseInstructionView: UIView {
         secondaryLabel.numberOfLines = 3
         
         secondaryLabel.frame = CGRect(x: 0,
-                                      y: primaryLabel.frame.height,
+                                      y: primaryLabel.frame.height + 4,
                                       width: getWidth(),
                                       height: 0)
         secondaryLabel.sizeToFitHeight()
@@ -151,10 +151,10 @@ public class MaterialShowcaseInstructionView: UIView {
     private func addButtonLabel() {
         buttonLabel = UIButton()
         buttonLabel.frame = CGRect(x: 0,
-                                   y: primaryLabel.frame.height + secondaryLabel.frame.height,
+                                   y: primaryLabel.frame.height + secondaryLabel.frame.height + 16,
                                    width: getWidth(),
                                    height: 0)
-        buttonLabel.setTitle(buttonText, for: .normal)
+        buttonLabel.setTitle("   " + buttonText + "   ", for: .normal)
         buttonLabel.sizeToFit()
         buttonLabel.setTitleColor(buttonTextColor, for: .normal)
         buttonLabel.titleLabel?.font = UIFont.boldSystemFont(ofSize: buttonTextSize)
