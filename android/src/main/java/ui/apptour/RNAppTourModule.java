@@ -23,9 +23,9 @@ import com.facebook.react.bridge.WritableMap;
 
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 
-import com.getkeepsafe.taptargetview.TapTargetSequence;
-import com.getkeepsafe.taptargetview.TapTargetView;
-import com.getkeepsafe.taptargetview.TapTarget;
+import ui.apptour.taptargetview.TapTargetSequence;
+import ui.apptour.taptargetview.TapTargetView;
+import ui.apptour.taptargetview.TapTarget;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -115,32 +115,13 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
     final String title = props.getString("title");
     final String description = props.getString("description");
 
+    String buttonTitle;
     String outerCircleColor = null;
     String targetCircleColor = null;
     String titleTextColor = null;
     String descriptionTextColor = null;
     String textColor = null;
     String dimColor = null;
-
-    if (props.hasKey("outerCircleColor") && !props.isNull("outerCircleColor")) {
-        outerCircleColor = props.getString("outerCircleColor");
-    }
-    if (props.hasKey("targetCircleColor") && !props.isNull("targetCircleColor")) {
-        targetCircleColor = props.getString("targetCircleColor");
-    }
-    if (props.hasKey("titleTextColor") && !props.isNull("titleTextColor")) {
-        titleTextColor = props.getString("titleTextColor");
-    }
-    if (props.hasKey("descriptionTextColor") && !props.isNull("descriptionTextColor")) {
-        descriptionTextColor = props.getString("descriptionTextColor");
-    }
-    if (props.hasKey("textColor") && !props.isNull("textColor")) {
-        textColor = props.getString("textColor");
-    }
-    if (props.hasKey("dimColor") && !props.isNull("dimColor")) {
-        dimColor = props.getString("dimColor");
-    }
-
 
     //Other Props
     float outerCircleAlpha = 0.96f;
@@ -152,6 +133,37 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
     boolean transparentTarget = false;
     int targetRadius = 60;
 
+    String buttonTextColor = null;
+    String buttonBGColor = null;
+    int buttonRadius = 16;
+    boolean buttonVisable = true;
+    int buttonTextSize = 8;
+
+    if (props.hasKey("outerCircleColor") && !props.isNull("outerCircleColor")) {
+      outerCircleColor = props.getString("outerCircleColor");
+    }
+    if (props.hasKey("targetCircleColor") && !props.isNull("targetCircleColor")) {
+      targetCircleColor = props.getString("targetCircleColor");
+    }
+    if (props.hasKey("titleTextColor") && !props.isNull("titleTextColor")) {
+      titleTextColor = props.getString("titleTextColor");
+    }
+    if (props.hasKey("descriptionTextColor") && !props.isNull("descriptionTextColor")) {
+      descriptionTextColor = props.getString("descriptionTextColor");
+    }
+    if (props.hasKey("textColor") && !props.isNull("textColor")) {
+      textColor = props.getString("textColor");
+    }
+    if (props.hasKey("dimColor") && !props.isNull("dimColor")) {
+      dimColor = props.getString("dimColor");
+    }
+    if (props.hasKey("buttonTextColor") && !props.isNull("buttonTextColor")) {
+      buttonTextColor = props.getString("buttonTextColor");
+    }
+    if (props.hasKey("buttonBGColor") && !props.isNull("buttonBGColor")) {
+      buttonBGColor = props.getString("buttonBGColor");
+    }
+
     try { outerCircleAlpha = Float.valueOf(props.getString("outerCircleAlpha")); } catch (Exception e) {}
     try { titleTextSize = Integer.valueOf(props.getString("titleTextSize")); } catch (Exception e) {}
     try { descriptionTextSize = Integer.valueOf(props.getString("descriptionTextSize")); } catch (Exception e) {}
@@ -160,6 +172,11 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
     try { tintTarget = Boolean.valueOf(props.getString("tintTarget")); } catch (Exception e) {}
     try { transparentTarget = Boolean.valueOf(props.getString("transparentTarget")); } catch (Exception e) {}
     try { targetRadius = Integer.valueOf(props.getString("targetRadius")); } catch (Exception e) {}
+    try { buttonRadius = Integer.valueOf(props.getString("buttonRadius")); } catch (Exception e) {}
+    try { buttonVisable = Boolean.valueOf(props.getString("buttonVisable")); } catch (Exception e) {}
+    try { buttonTitle = props.getString("buttonText");} catch (Exception e) {buttonTitle = "OK";}
+    try { buttonTextSize = Integer.valueOf(props.getString("buttonTextSize")); } catch (Exception e) {}
+
 
     float finalOuterCircleAlpha = outerCircleAlpha;
     int finalTitleTextSize = titleTextSize;
@@ -172,7 +189,7 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
 
 
     //Populate Props
-    TapTarget targetView = TapTarget.forView(activity.findViewById(view), title, description);
+    TapTarget targetView = TapTarget.forView(activity.findViewById(view), title, description, buttonTitle);
 
     if (outerCircleColor != null && outerCircleColor.length() > 0) targetView.outerCircleColorInt(Color.parseColor(outerCircleColor));
     if (targetCircleColor != null && targetCircleColor.length() > 0) targetView.targetCircleColorInt(Color.parseColor(targetCircleColor));
@@ -180,8 +197,16 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
     if (descriptionTextColor != null && descriptionTextColor.length() > 0) targetView.descriptionTextColorInt(Color.parseColor(descriptionTextColor));
     if (textColor != null && textColor.length() > 0) targetView.textColorInt(Color.parseColor(textColor));
     if (dimColor != null && dimColor.length() > 0) targetView.dimColorInt(Color.parseColor(dimColor));
-
-
+    if (buttonVisable) {
+      targetView.buttonVisible(true);
+      if (buttonBGColor != null && buttonBGColor.length() > 0) targetView.buttonBGColorInt(Color.parseColor(buttonBGColor));
+      if (buttonTextColor != null && buttonTextColor.length() > 0) targetView.buttonTextColorInt(Color.parseColor(buttonTextColor));
+      targetView.cornersRadius(buttonRadius);
+      targetView.buttonTextSize(buttonTextSize);
+    } else {
+      targetView.buttonVisible(false);
+    }
+    
     targetView.outerCircleAlpha(finalOuterCircleAlpha);
     targetView.titleTextSize(finalTitleTextSize);
     targetView.descriptionTextSize(finalDescriptionTextSize);
@@ -190,6 +215,7 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
     targetView.tintTarget(finalTintTarget);
     targetView.transparentTarget(finalTransparentTarget);
     targetView.targetRadius(finalTargetRadius);
+    
 
     return targetView;
  }
