@@ -84,7 +84,7 @@ public class TapTarget {
   @DimenRes
   private int buttonTextDimen = -1;
 
-  private int titleTextSize = 20;
+  private int titleTextSize = 18;
   private int descriptionTextSize = 18;
   private int buttonTextSize = 18;
   int id = -1;

@@ -22,6 +22,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
+import android.content.res.AssetManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -57,6 +58,7 @@ import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.Button;
 import android.widget.RelativeLayout;
+import java.util.Locale;
 
 /**
  * TapTargetView implements a feature discovery paradigm following Google's Material Design
@@ -429,14 +431,16 @@ public class TapTargetView extends View {
         targetBounds = new Rect();
         drawingBounds = new Rect();
 
+        AssetManager am = context.getApplicationContext().getAssets();
+
         titlePaint = new TextPaint();
         titlePaint.setTextSize(target.titleTextSizePx(context));
-        titlePaint.setTypeface(Typeface.create("sans-serif-medium", Typeface.NORMAL));
+        titlePaint.setTypeface(Typeface.createFromAsset(am,String.format(Locale.US, "fonts/%s", "SukhumvitSet-Bold.ttf")));
         titlePaint.setAntiAlias(true);
 
         descriptionPaint = new TextPaint();
         descriptionPaint.setTextSize(target.descriptionTextSizePx(context));
-        descriptionPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL));
+        descriptionPaint.setTypeface(Typeface.createFromAsset(am,String.format(Locale.US, "fonts/%s", "SukhumvitSet-Medium.ttf")));
         descriptionPaint.setAntiAlias(true);
         descriptionPaint.setAlpha((int) (0.54f * 255.0f));
 
@@ -447,7 +451,7 @@ public class TapTargetView extends View {
 
         buttonTextPaint = new TextPaint();
         buttonTextPaint.setTextSize(target.buttonTextSizePx(context));
-        buttonTextPaint.setTypeface(Typeface.create(Typeface.SANS_SERIF, Typeface.NORMAL));
+        buttonTextPaint.setTypeface(Typeface.createFromAsset(am,String.format(Locale.US, "fonts/%s", "SukhumvitSet-Bold.ttf")));
         buttonTextPaint.setAntiAlias(true);
 
         outerCirclePaint = new Paint();

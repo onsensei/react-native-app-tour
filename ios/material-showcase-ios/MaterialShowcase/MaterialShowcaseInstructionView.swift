@@ -101,6 +101,7 @@ public class MaterialShowcaseInstructionView: UIView {
         primaryLabel.numberOfLines = 0
         primaryLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         primaryLabel.text = primaryText
+        primaryLabel.font = UIFont(name: "SukhumvitSet-Bold", size: primaryTextSize)
         
         //    // Calculate x position
         //    let xPosition = backgroundView.frame.minX > 0 ?
@@ -136,7 +137,7 @@ public class MaterialShowcaseInstructionView: UIView {
         secondaryLabel.lineBreakMode = NSLineBreakMode.byWordWrapping
         secondaryLabel.text = secondaryText
         secondaryLabel.numberOfLines = 3
-        
+        secondaryLabel.font = UIFont(name: "SukhumvitSet-Medium", size: secondaryTextSize)
         secondaryLabel.frame = CGRect(x: 0,
                                       y: primaryLabel.frame.height + 4,
                                       width: getWidth(),
@@ -159,6 +160,7 @@ public class MaterialShowcaseInstructionView: UIView {
         buttonLabel.isEnabled = true
         buttonLabel.setTitleColor(buttonTextColor, for: .normal)
         buttonLabel.titleLabel?.font = UIFont.boldSystemFont(ofSize: buttonTextSize)
+        buttonLabel.titleLabel?.font = UIFont(name: "SukhumvitSet-Bold", size: buttonTextSize)
         buttonLabel.backgroundColor = buttonBGColor
         buttonLabel.titleLabel?.textAlignment = .left
         buttonLabel.layer.cornerRadius = buttomRadius
