@@ -22,7 +22,7 @@ public class MaterialShowcaseInstructionView: UIView {
     internal static let BUTTON_DEFAULT_TEXT_COLOR = UIColor.white
     internal static let BUTTON_DEFAULT_BG_COLOR = UIColor.red
     internal static let BUTTON_DEFAULT_VISABLE = true
-    internal static let BUTTON_DEFAULT_RADIUS: CGFloat = 0
+    internal static let BUTTON_DEFAULT_RADIUS: CGFloat = 16
     
     public var primaryLabel: UILabel!
     public var secondaryLabel: UILabel!
@@ -156,13 +156,14 @@ public class MaterialShowcaseInstructionView: UIView {
                                    height: 0)
         buttonLabel.setTitle("   " + buttonText + "   ", for: .normal)
         buttonLabel.sizeToFit()
+        buttonLabel.isEnabled = true
         buttonLabel.setTitleColor(buttonTextColor, for: .normal)
         buttonLabel.titleLabel?.font = UIFont.boldSystemFont(ofSize: buttonTextSize)
         buttonLabel.backgroundColor = buttonBGColor
         buttonLabel.titleLabel?.textAlignment = .left
         buttonLabel.layer.cornerRadius = buttomRadius
         addSubview(buttonLabel)
-        frame = CGRect(x: frame.minX, y: frame.minY, width: getWidth(), height: primaryLabel.frame.height + secondaryLabel.frame.height + buttonLabel.frame.height)
+        frame = CGRect(x: frame.minX, y: frame.minY, width: getWidth(), height: primaryLabel.frame.height + secondaryLabel.frame.height + buttonLabel.frame.height + 20)
     }
     
     //Calculate width per device

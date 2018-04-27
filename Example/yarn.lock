@@ -5240,9 +5240,9 @@ watch@~0.18.0:
     exec-sh "^0.2.0"
     minimist "^1.2.0"
 
-wcchimiiz-show-case-v2@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/wcchimiiz-show-case-v2/-/wcchimiiz-show-case-v2-1.2.1.tgz#eb948a2105def787ff3128487fefadede1bd23b8"
+wcchimiiz-show-case-v2@^1.2.7:
+  version "1.2.7"
+  resolved "https://registry.yarnpkg.com/wcchimiiz-show-case-v2/-/wcchimiiz-show-case-v2-1.2.7.tgz#aedd7d762eec20ca5a956f501d43df1490ade8ce"
 
 webidl-conversions@^4.0.1, webidl-conversions@^4.0.2:
   version "4.0.2"

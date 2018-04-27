@@ -75,7 +75,7 @@ class Main extends Component {
               buttonTextSize: '16',
               buttonTextColor: '#FFFFFF',
               buttonBGColor: '#123FFF',
-              buttonRadius: '0'
+              buttonRadius: '10'
             });
             AppTour.ShowFor(targetView);}}>
           <Text> Click Me !!! </Text>

@@ -406,9 +406,9 @@ public class TapTargetView extends View {
         this.title = target.title;
         this.description = target.description;
         if (target.buttonText != null) {
-            this.buttonText = target.buttonText;
+            this.buttonText =  "  " + target.buttonText + "  ";
         } else {
-            this.buttonText = "OK";
+            this.buttonText = "  OK  ";
         }
         this.buttonVisible = target.buttonVisible;
         this.cornersRadius = target.cornersRadius;
@@ -979,7 +979,7 @@ public class TapTargetView extends View {
         if (buttonText != null) {
             buttonLayout = new StaticLayout(buttonText, buttonTextPaint, textWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         } else {
-            buttonLayout = new StaticLayout("OK", buttonTextPaint, textWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+            buttonLayout = new StaticLayout("  OK  ", buttonTextPaint, textWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         }
     }
 
