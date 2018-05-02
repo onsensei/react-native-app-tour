@@ -748,7 +748,7 @@ public class TapTargetView extends View {
             }
 
             if (buttonLayout != null && descriptionLayout != null && titleLayout != null && buttonVisible) {
-                c.translate(0, titleLayout.getHeight() + descriptionLayout.getHeight() + TEXT_SPACING);
+                c.translate(0, descriptionLayout.getHeight() + TEXT_SPACING);
                 buttonTextPaint.setAlpha(textAlpha);
                 buttonBGPaint.setAlpha(textAlpha);
                 Paint p = new Paint();
@@ -762,7 +762,7 @@ public class TapTargetView extends View {
                 }
                 buttonLayout.draw(c);
             } else if (buttonLayout != null && titleLayout != null && descriptionLayout == null && buttonVisible) {
-                c.translate(0, titleLayout.getHeight() + TEXT_SPACING + titleLayout.getHeight() + TEXT_SPACING);
+                c.translate(0, titleLayout.getHeight() + TEXT_SPACING);
                 buttonTextPaint.setAlpha(textAlpha);
                 buttonBGPaint.setAlpha(textAlpha);
                 Paint p = new Paint();
@@ -1077,18 +1077,18 @@ public class TapTargetView extends View {
         final int top;
         if (possibleTop > topBoundary) {
             if (descriptionLayout == null) {
-                possibleTopB = possibleTop1 + tH + TEXT_SPACING + tH + TEXT_SPACING;
+                possibleTopB = possibleTop1 + tH + TEXT_SPACING;
             } else {
                 dH = descriptionLayout.getHeight();
-                possibleTopB = possibleTop1 + tH + TEXT_SPACING + tH + dH + TEXT_SPACING;
+                possibleTopB = possibleTop1 + tH + TEXT_SPACING + dH + TEXT_SPACING;
             }
             top = possibleTopB;
         } else {
             if (descriptionLayout == null) {
-                possibleTopB = targetBounds.centerY() + TARGET_RADIUS + TARGET_PADDING + tH + TEXT_SPACING + tH + TEXT_SPACING;
+                possibleTopB = targetBounds.centerY() + TARGET_RADIUS + TARGET_PADDING + tH + TEXT_SPACING;
             } else {
                 dH = descriptionLayout.getHeight();
-                possibleTopB = targetBounds.centerY() + TARGET_RADIUS + TARGET_PADDING + tH + TEXT_SPACING + tH + dH + TEXT_SPACING;
+                possibleTopB = targetBounds.centerY() + TARGET_RADIUS + TARGET_PADDING + tH + TEXT_SPACING + dH + TEXT_SPACING;
             }
             top = possibleTopB;
         }
@@ -1125,16 +1125,19 @@ public class TapTargetView extends View {
         if (titleLayout == null) {
             return 0;
         }
-
         if (descriptionLayout == null) {
-            if (buttonLayout == null) {
-                return titleLayout.getHeight() + TEXT_SPACING;
-            } else {
-                return titleLayout.getHeight() + buttonLayout.getHeight() + TEXT_SPACING;
-            }
+          if (buttonLayout == null) {
+            return titleLayout.getHeight() + TEXT_SPACING;
+          } else {
+            return titleLayout.getHeight() + TEXT_SPACING + buttonLayout.getHeight() + TEXT_SPACING;
+          }
+        } else {
+          if (buttonLayout == null) {
+            return titleLayout.getHeight() + TEXT_SPACING + descriptionLayout.getHeight() + TEXT_SPACING;
+        } else {
+          return titleLayout.getHeight() + TEXT_SPACING + descriptionLayout.getHeight() + TEXT_SPACING + buttonLayout.getHeight() + TEXT_SPACING;
+          }
         }
-
-        return titleLayout.getHeight() + descriptionLayout.getHeight() + buttonLayout.getHeight() + TEXT_SPACING;
     }
 
     int getTotalTextWidth() {
