@@ -445,7 +445,23 @@ extension MaterialShowcase {
                 yPosition = center.y + TARGET_PADDING +  (targetView.bounds.height / 2 > self.targetHolderRadius ? targetView.bounds.height / 2 : self.targetHolderRadius)
                 
             } else {
-                yPosition = center.y - TEXT_CENTER_OFFSET - LABEL_DEFAULT_HEIGHT * 3
+                let pL = UILabel()
+                pL.text = primaryText
+                pL.font = UIFont(name: "SukhumvitSet-Bold", size: primaryTextSize)
+                pL.sizeToFit()
+                
+                let dL = UILabel()
+                dL.text = secondaryText
+                dL.font = UIFont(name: "SukhumvitSet-Medium", size: secondaryTextSize)
+                dL.sizeToFit()
+                
+                let bL = UIButton()
+                bL.setTitle("   " + buttonText + "   ", for: .normal)
+                bL.titleLabel?.font = UIFont(name: "SukhumvitSet-Bold", size: buttonTextSize)
+                bL.sizeToFit()
+                
+//                yPosition = center.y - TEXT_CENTER_OFFSET - LABEL_DEFAULT_HEIGHT * 3
+                yPosition = center.y - TEXT_CENTER_OFFSET - pL.frame.height - dL.frame.height - bL.frame.height
             }
             
             width = containerView.frame.width - (xPosition + xPosition)

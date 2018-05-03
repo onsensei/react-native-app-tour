@@ -4,7 +4,9 @@
   "description": "",
   "main": "RNAppTour.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose --coverage",
+    "test:update": "jest --verbose --coverage --updateSnapshot",
+    "test:watch": "jest --verbose --watch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +17,28 @@
   "bugs": {
     "url": "https://github.com/WCChimiiz/react-native-app-tour/issues"
   },
-  "homepage": "https://github.com/WCChimiiz/react-native-app-tour#readme"
+  "homepage": "https://github.com/WCChimiiz/react-native-app-tour#readme",
+  "dependencies": {
+    "react": "16.3.1",
+    "react-native": "0.55.2"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-react-16-adapter-setup": "^0.1.0",
+    "jest": "^22.4.3",
+    "jest-enzyme": "^6.0.0",
+    "react-test-renderer": "^16.3.2"
+  },
+  "jest": {
+    "preset": "react-native",
+    "cacheDirectory": "./cache",
+    "setupTestFrameworkScriptFile": "./node_modules/jest-enzyme/lib/index.js",
+    "setupFiles": [
+      "enzyme-react-16-adapter-setup"
+    ],
+    "transformIgnorePatterns": [
+      "/node_modules/(?!react-native|react-navigation)"
+    ]
+  }
 }
