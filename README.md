@@ -52,6 +52,7 @@ import {AppTour, AppTourSequence, AppTourView} from 'wcchimiiz-show-case-v2';
   - titleTextSize #String(0 - 100)
   - descriptionTextSize #String(0 - 100)
   - titleTextColor #hexCodeRGB
+  - targetHolderColor #hexCodeRGB
   - descriptionTextColor #hexCodeRGB
   - outerCircleColor #hexCodeRGB
   - outerCircleAlpha #String(0.00 - 1.00)
