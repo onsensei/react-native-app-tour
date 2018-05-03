@@ -448,16 +448,30 @@ extension MaterialShowcase {
                 let pL = UILabel()
                 pL.text = primaryText
                 pL.font = UIFont(name: "SukhumvitSet-Bold", size: primaryTextSize)
+                pL.lineBreakMode = NSLineBreakMode.byWordWrapping
+                pL.frame = CGRect(x: 0,
+                                  y: 0,
+                                  width: containerView.frame.width - (xPosition + xPosition),
+                                  height: 0)
                 pL.sizeToFit()
                 
                 let dL = UILabel()
                 dL.text = secondaryText
                 dL.font = UIFont(name: "SukhumvitSet-Medium", size: secondaryTextSize)
+                dL.lineBreakMode = NSLineBreakMode.byWordWrapping
+                dL.frame = CGRect(x: 0,
+                                   y: pL.frame.height + 4,
+                                   width: containerView.frame.width - (xPosition + xPosition),
+                                   height: 0)
                 dL.sizeToFit()
                 
                 let bL = UIButton()
                 bL.setTitle("   " + buttonText + "   ", for: .normal)
                 bL.titleLabel?.font = UIFont(name: "SukhumvitSet-Bold", size: buttonTextSize)
+                bL.frame = CGRect(x: 0,
+                                  y: pL.frame.height + dL.frame.height + 16,
+                                  width: containerView.frame.width - (xPosition + xPosition),
+                                  height: 0)
                 bL.sizeToFit()
                 
 //                yPosition = center.y - TEXT_CENTER_OFFSET - LABEL_DEFAULT_HEIGHT * 3
