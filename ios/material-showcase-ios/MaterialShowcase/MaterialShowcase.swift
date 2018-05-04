@@ -478,7 +478,7 @@ extension MaterialShowcase {
                 bL.sizeToFit()
                 
 //                yPosition = center.y - TEXT_CENTER_OFFSET - LABEL_DEFAULT_HEIGHT * 3
-                yPosition = center.y - TEXT_CENTER_OFFSET - plRect.height - plRect.height - plRect.height
+                yPosition = center.y - targetHolderRadius - pL.frame.height - LABEL_DEFAULT_HEIGHT - dL.frame.height - LABEL_DEFAULT_HEIGHT - bL.frame.height - LABEL_DEFAULT_HEIGHT
             }
             
             width = containerView.frame.width - (xPosition + xPosition)
