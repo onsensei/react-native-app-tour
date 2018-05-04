@@ -445,15 +445,18 @@ extension MaterialShowcase {
                 yPosition = center.y + TARGET_PADDING +  (targetView.bounds.height / 2 > self.targetHolderRadius ? targetView.bounds.height / 2 : self.targetHolderRadius)
                 
             } else {
+                let cvSize = CGSize(width: ceil(containerView.bounds.width), height: ceil(0))
                 let pL = UILabel()
                 pL.text = primaryText
                 pL.font = UIFont(name: "SukhumvitSet-Bold", size: primaryTextSize)
-                pL.lineBreakMode = NSLineBreakMode.byWordWrapping
+                pL.lineBreakMode = NSLineBreakMode.byCharWrappingß
                 pL.frame = CGRect(x: 0,
                                   y: 0,
                                   width: containerView.frame.width - (xPosition + xPosition),
                                   height: 0)
-                pL.sizeToFit()
+//                pL.sizeToFit()
+                let plSizeFit:CGSize = pL.sizeThatFits(cvSize)
+                let plRect = CGSize(width: ceil(plSizeFit.width), height: ceil(plSizeFit.height))
                 
                 let dL = UILabel()
                 dL.text = secondaryText
@@ -475,7 +478,7 @@ extension MaterialShowcase {
                 bL.sizeToFit()
                 
 //                yPosition = center.y - TEXT_CENTER_OFFSET - LABEL_DEFAULT_HEIGHT * 3
-                yPosition = center.y - TEXT_CENTER_OFFSET - pL.frame.height - dL.frame.height - bL.frame.height
+                yPosition = center.y - TEXT_CENTER_OFFSET - plRect.height - plRect.height - plRect.height
             }
             
             width = containerView.frame.width - (xPosition + xPosition)
