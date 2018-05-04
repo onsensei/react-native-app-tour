@@ -449,7 +449,7 @@ extension MaterialShowcase {
                 let pL = UILabel()
                 pL.text = primaryText
                 pL.font = UIFont(name: "SukhumvitSet-Bold", size: primaryTextSize)
-                pL.lineBreakMode = NSLineBreakMode.byCharWrappingß
+                pL.lineBreakMode = NSLineBreakMode.byCharWrapping
                 pL.frame = CGRect(x: 0,
                                   y: 0,
                                   width: containerView.frame.width - (xPosition + xPosition),
