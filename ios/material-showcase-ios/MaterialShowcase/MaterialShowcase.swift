@@ -31,6 +31,7 @@ public class MaterialShowcase: UIView {
     let LABEL_DEFAULT_HEIGHT: CGFloat = 50
     let BACKGROUND_DEFAULT_COLOR = UIColor.fromHex(hexString: "#2196F3")
     let TARGET_HOLDER_COLOR = UIColor.white
+    let TARGET_TRAN_DEFAULT = false
     
     // MARK: Animation properties
     var ANI_COMEIN_DURATION: TimeInterval = 0.5 // second
@@ -68,6 +69,7 @@ public class MaterialShowcase: UIView {
     @objc public var targetTintColor: UIColor!
     @objc public var targetHolderRadius: CGFloat = 0.0
     @objc public var targetHolderColor: UIColor!
+    @objc public var targetTran: Bool = false
     // Button
     @objc public var buttonVisable: Bool = true
     @objc public var buttonTextColor: UIColor!
@@ -115,6 +117,7 @@ extension MaterialShowcase {
     /// Sets a general UIView as target
     @objc public func setTargetView(view: UIView) {
         targetView = view
+        
         if let label = targetView as? UILabel {
             targetTintColor = label.textColor
             backgroundPromptColor = label.textColor
@@ -222,6 +225,7 @@ extension MaterialShowcase {
         targetTintColor = BACKGROUND_DEFAULT_COLOR
         targetHolderColor = TARGET_HOLDER_COLOR
         targetHolderRadius = TARGET_HOLDER_RADIUS
+        targetTran = TARGET_TRAN_DEFAULT
         // Text
         primaryText = MaterialShowcaseInstructionView.PRIMARY_DEFAULT_TEXT
         secondaryText = MaterialShowcaseInstructionView.SECONDARY_DEFAULT_TEXT
@@ -344,7 +348,11 @@ extension MaterialShowcase {
         hiddenTargetHolderView.isHidden = true
         targetHolderView = UIView(frame: CGRect(x: 0, y: 0, width: targetHolderRadius * 2,height: targetHolderRadius * 2))
         targetHolderView.center = center
-        targetHolderView.backgroundColor = targetHolderColor
+        if targetTran {
+            targetHolderView.backgroundColor = UIColor(white: 1, alpha: 0)
+        } else {
+            targetHolderView.backgroundColor = targetHolderColor
+        }
         targetHolderView.asCircle()
         hiddenTargetHolderView.frame = targetHolderView.frame
         targetHolderView.transform = CGAffineTransform(scaleX: 1/ANI_TARGET_HOLDER_SCALE, y: 1/ANI_TARGET_HOLDER_SCALE) // Initial set to support animation

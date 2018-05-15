@@ -219,6 +219,7 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     // Target
     UIColor *targetTintColor;
     UIColor *targetHolderColor;
+    
     NSString *targetTintColorValue = [props objectForKey:@"outerCircleColor"];
     if (targetTintColorValue != nil) {
         targetTintColor = [self colorWithHexString: targetTintColorValue];
@@ -233,6 +234,11 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
         [materialShowcase setTargetTintColor: targetTintColor];
     } if (targetHolderColor != nil) {
         [materialShowcase setTargetHolderColor: targetHolderColor];
+    }
+
+    if ([[props objectForKey:@"transparentTarget"] boolValue] != nil) {
+      BOOL *transparentTarget = [[props objectForKey:@"transparentTarget"] boolValue];
+      [materialShowcase setTargetTran: transparentTarget];
     }
     
     if ([props objectForKey:@"targetRadius"] != nil) {
