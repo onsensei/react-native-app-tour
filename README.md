@@ -57,6 +57,7 @@ import {AppTour, AppTourSequence, AppTourView} from 'wcchimiiz-show-case-v2';
   - outerCircleColor #hexCodeRGB
   - outerCircleAlpha #String(0.00 - 1.00)
   - targetRadius #String(0 - 100)
+  - transparentTarget #Bool
   - buttonText #String
   - buttonTextColor #hexCodeRGB
   - buttonBGColor #hexCodeRGB

@@ -327,7 +327,29 @@ extension MaterialShowcase {
         case .full:
             backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height))
         }
+        
+        let radiuss = getOuterCircleRadius(center: center, textBounds: instructionView.frame, targetBounds: targetCopyView.frame)
+        
+        let p = targetView.convert(targetView.center, to: self)
+        
         backgroundView.backgroundColor = backgroundPromptColor.withAlphaComponent(backgroundPromptColorAlpha)
+        
+        if targetTran {
+            // Create a path with the rectangle in it.
+            let p = CGMutablePath()
+            p.addArc(center: CGPoint(x: backgroundView.bounds.midX, y: backgroundView.bounds.midY), radius: targetHolderRadius , startAngle: 0.0, endAngle: 2 * (22/7), clockwise: false)
+            p.addRect(CGRect(x: 0, y: 0, width: backgroundView.frame.width, height: backgroundView.frame.height))
+            
+            let ml = CAShapeLayer()
+            ml.backgroundColor = UIColor.black.cgColor
+            ml.path = p;
+            ml.fillRule = kCAFillRuleEvenOdd
+            
+            // Release the path since it's not covered by ARC.
+            backgroundView.layer.mask = ml
+            backgroundView.clipsToBounds = true
+        }
+        
         insertSubview(backgroundView, belowSubview: targetRippleView)
     }
     
