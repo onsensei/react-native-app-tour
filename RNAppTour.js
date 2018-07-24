@@ -21,6 +21,14 @@ class AppTour {
   static ShowFor(appTourTarget) {
     RNAppTour.ShowFor(appTourTarget.view, appTourTarget.props);
   }
+
+  static ShowViewPartition() {
+    RNAppTour.ShowViewPartition();
+  }
+
+  static HideViewPartition() {
+    RNAppTour.HideViewPartition();
+  }
 }
 
 class AppTourSequence {
