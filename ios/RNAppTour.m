@@ -1,5 +1,6 @@
 #import "RNAppTour.h"
 #import <React/RCTEventDispatcher.h>
+#import "ViewPartition.h"
 
 NSString *const onStartShowStepEvent = @"onStartShowCaseEvent";
 NSString *const onShowSequenceStepEvent = @"onShowSequenceStepEvent";
