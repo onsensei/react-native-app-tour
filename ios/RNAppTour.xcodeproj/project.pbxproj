@@ -34,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		04F8806E210724C800C4E317 /* ViewPartition */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ViewPartition; sourceTree = "<group>"; };
 		134814201AA4EA6300B7C361 /* libRNAppTour.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNAppTour.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EE894712063C13E00BEE1F2 /* MaterialShowcase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MaterialShowcase.xcodeproj; path = "material-showcase-ios/MaterialShowcase.xcodeproj"; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNAppTour.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNAppTour.h; sourceTree = "<group>"; };
@@ -78,6 +79,7 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				04F8806E210724C800C4E317 /* ViewPartition */,
 				B3E7B5881CC2AC0600A0062D /* RNAppTour.h */,
 				B3E7B5891CC2AC0600A0062D /* RNAppTour.m */,
 				134814211AA4EA7D00B7C361 /* Products */,

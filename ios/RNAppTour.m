@@ -392,4 +392,14 @@ RCT_EXPORT_METHOD(ShowFor:(nonnull NSNumber *)view props:(NSDictionary *)props)
     return materialShowcase;
 }
 
+RCT_EXPORT_METHOD(ShowViewPartition)
+{
+    [ViewPartition showViewPartition];
+}
+
+RCT_EXPORT_METHOD(HideViewPartition)
+{
+    [ViewPartition hideViewPartition];
+}
+
 @end
