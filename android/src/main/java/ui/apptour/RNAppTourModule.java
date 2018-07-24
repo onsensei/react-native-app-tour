@@ -27,6 +27,8 @@ import ui.apptour.taptargetview.TapTargetSequence;
 import ui.apptour.taptargetview.TapTargetView;
 import ui.apptour.taptargetview.TapTarget;
 
+import ui.apptour.viewpartition.ViewPartition;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -107,6 +109,28 @@ public class RNAppTourModule extends ReactContextBaseJavaModule {
             TapTargetView.showFor(activity, targetView);
           }
     });
+  }
+
+  @ReactMethod
+  public void ShowViewPartition() {
+      final Activity activity = this.getCurrentActivity();
+      activity.runOnUiThread(new Runnable() {
+          @Override
+          public void run() {
+              ViewPartition.showViewPartition(activity);
+          }
+      });
+  }
+
+  @ReactMethod
+  public void HideViewPartition() {
+      final Activity activity = this.getCurrentActivity();
+      activity.runOnUiThread(new Runnable() {
+          @Override
+          public void run() {
+              ViewPartition.hideViewPartition(activity);
+          }
+      });
   }
 
   private TapTarget generateTapTarget(final int view, final ReadableMap props) {
