@@ -35,10 +35,10 @@ repositories {
 }
 
 dependencies {
-  compile fileTree(dir: 'libs', include: ['*.jar'])
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
   // compile project(':taptargetview')
-  compile 'com.android.support:appcompat-v7:22.2.1'
-  compile 'com.facebook.react:react-native:+'
+  implementation 'com.android.support:appcompat-v7:22.2.1'
+  implementation 'com.facebook.react:react-native:+'
   // compile 'com.getkeepsafe.taptargetview:taptargetview:1.10.0'
 }
   
