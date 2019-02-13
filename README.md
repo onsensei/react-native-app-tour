@@ -1,10 +1,10 @@
 <p align="center">
-  <a href="https://www.npmjs.com/package/wcchimiiz-show-case-v2"><img src="http://img.shields.io/npm/v/wcchimiiz-show-case-v2.svg?style=flat" /></a>
-  <a href="https://github.com/WCChimiiz/react-native-WcShowCaseV2/pulls"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" /></a>
-  <a href="https://github.com/WCChimiiz/react-native-WcShowCaseV2#License"><img src="https://img.shields.io/npm/l/wcchimiiz-show-case-v2.svg?style=flat" /></a>
+  <a href="https://www.npmjs.com/package/onsensei-react-native-app-tour"><img src="http://img.shields.io/npm/v/onsensei-react-native-app-tour.svg?style=flat" /></a>
+  <a href="https://github.com/onsensei/onsensei-react-native-app-tour/pulls"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" /></a>
+  <a href="https://github.com/onsensei/onsensei-react-native-app-tour#License"><img src="https://img.shields.io/npm/l/onsensei-react-native-app-tour.svg?style=flat" /></a>
 </p>
 
-# wcchimiiz-show-case-v2
+# onsensei-react-native-app-tour
 
 This library is a React Native bridge around native libraries. It allows show/guide beautiful tours:
 
@@ -19,9 +19,9 @@ This library is a React Native bridge around native libraries. It allows show/gu
 
 ## Getting started
 
-`$ npm install wcchimiiz-show-case-v2 --save`
+`$ npm install onsensei-react-native-app-tour --save`
 
-`$ react-native link wcchimiiz-show-case-v2`
+`$ react-native link onsensei-react-native-app-tour`
 
 - **Android**
   - in ./android/app/src/build.gradle
@@ -43,7 +43,7 @@ This library is a React Native bridge around native libraries. It allows show/gu
 
 ## Usage
 ```javascript
-import {AppTour, AppTourSequence, AppTourView} from 'wcchimiiz-show-case-v2';
+import {AppTour, AppTourSequence, AppTourView} from 'onsensei-react-native-app-tour';
 ```
 
 **Props**
